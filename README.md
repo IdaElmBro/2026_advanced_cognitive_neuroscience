@@ -2,7 +2,7 @@
 
 This is the readme for the course Advanced Cognitive Neuroscience run at the Cognitive Science programme at Aarhus University 2026.  
   
-All code is tested using Coder Python version **1.103.1**  
+All code is tested using Coder Python version **1.131.0** on uCloud.
   
 Some text and code shamelessly stolen from Laura Bock Paulsen's repository: https://github.com/laurabpaulsen/CogNeuro2025/tree/main/EEG_LAB#readme
 
@@ -42,7 +42,7 @@ This latter command can be run when initialising the job. See *Additional parame
 
 #### Do it
 
-Now, create your virtual environment and check that you can run Coder Python (use version **1.103.1**)
+Now, create your virtual environment and check that you can run Coder Python (use version **1.131.0**)
 
 ### Local environment
 
