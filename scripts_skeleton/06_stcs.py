@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # epochs_path = 
     
     # ------------------------------------------------------------------
-    # Load epochs, and choose a subset of them t(all targets for example as you may run into memory problems otherwise)
+    # Load epochs, and choose a subset of them (all targets for example as you may run into memory problems otherwise)
     # ------------------------------------------------------------------
     epochs = mne.read_epochs(epochs_path)
     epochs = epochs["<INSERT SOMETHING HERE!>"]
