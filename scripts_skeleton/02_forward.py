@@ -86,13 +86,11 @@ if __name__ == "__main__":
     report = setup_report(report_path, title=f"Anatomy Report | {subject}")
     
     # ------------------------------------------------------------------
-    # Load needed information 
+    # Read bem solution, head to mri transformation and raw.info to get device information 
     # ------------------------------------------------------------------
-
-    # TODO: Read bem solution, 
-    # TODO: Read head to mri transformation obtained using the coregistration GUI
-    # TODO: read info to get device information (you can use mne.io.read_info)
-
+    bem_sol = mne.read_bem_solution(fnames.bem_sol(subject=subject))
+    trans = mne.read_trans(fnames.head_mri_t(subject=subject))
+    info = mne.io.read_info(fnames.sub_raw(subject=subject, date=date))
 
     # ------------------------------------------------------------------
     # Plot alignment
@@ -101,16 +99,32 @@ if __name__ == "__main__":
     report.add_figure(fig, title="3D surface alignment", caption="Alignment of MEG sensors with surfaces.", section="Anatomy", replace=True)
 
 
+    paths_src = [
+        fnames.src_surface(subject=subject, surf_spacing=SRC_SPACING), 
+        fnames.src_volume(subject=subject, vol_spacing=VOL_SPACING), 
+        fnames.src_combined(subject=subject, surf_spacing=SRC_SPACING, vol_spacing=VOL_SPACING)
+    ]
+    
     # ------------------------------------------------------------------
     # Computing forward(s)
     # ------------------------------------------------------------------
-    # TODO: Load source space(s)
-    # TODO: Compute forward solution(s)
-    # TODO: Save forward solution(s)
 
-    # TODO add forward(s) to report
+    for src_path in paths_src:
+        src_info = src_path.name.replace("-src.fif", "")
+        src_info = src_info.replace(f"{subject}_", "")
 
-    # ------------------------------------------------------------------
-    # Save report
-    # ------------------------------------------------------------------
+        src = mne.read_source_spaces(src_path)
+        
+        # computing forward solution
+        forward_surface = mne.make_forward_solution(
+            info, trans=trans,
+            src=src, bem=bem_sol, meg=True, eeg=False, 
+            mindist=1.0, n_jobs=4,
+            )
+        
+        fwd_path = fnames.forward_model(subject=subject, src_info=src_info)
+        mne.write_forward_solution(fwd_path, forward_surface, overwrite=True)
+
+        report.add_forward(forward_surface, title=f"Forward solution for {src_info} source space", section="Forward modeling", replace=True)
+        
     save_report(report, report_path)

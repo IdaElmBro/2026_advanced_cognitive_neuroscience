@@ -78,11 +78,28 @@ fnames.add('reports', '{derivatives}/reports')
 fnames.add('anatomy_report', '{reports}/{subject}/{subject}_anatomy_report.h5')
 fnames.add('preproc_report', '{reports}/{subject}/{subject}_preproc_report.h5')
 
+
+# SOURCE SPACE 
+fnames.add('fwd', '{root}/fwd')
+fnames.add('fwd_sub', '{fwd}/{subject}')
+
+# trans
+fnames.add('head_mri_t', '{subjects_dir}/trans/{subject}_head_mri-trans.fif')
+
+
 # bem
-fnames.add('bem_model', '{sub_meg_derivatives}/{subject}_bem.fif')
-fnames.add('bem_sol', '{sub_meg_derivatives}/{subject}_bem_solution.fif')
+fnames.add('bem_model', '{fwd_sub}/{subject}_bem.fif')
+fnames.add('bem_sol', '{fwd_sub}/{subject}_bem_solution.fif')
 
 # source spaces
-fnames.add('src_surface', '{sub_meg_derivatives}/{subject}_surface-spacing-{surf_spacing}-src.fif')
-fnames.add('src_volume', '{sub_meg_derivatives}/{subject}_volume-spacing-{vol_spacing}mm-src.fif')
-fnames.add('src_combined', '{sub_meg_derivatives}/{subject}_combined-surface-spacing-{surf_spacing}-volume-spacing-{vol_spacing}mm-src.fif')
+fnames.add('src_surface', '{fwd_sub}/{subject}_surface-spacing-{surf_spacing}-src.fif')
+fnames.add('src_volume', '{fwd_sub}/{subject}_volume-spacing-{vol_spacing}mm-src.fif')
+fnames.add('src_combined', '{fwd_sub}/{subject}_combined-surface-spacing-{surf_spacing}-volume-spacing-{vol_spacing}mm-src.fif')
+
+
+# forward model 
+fnames.add('forward_model', '{fwd_sub}/{subject}_{src_info}-fwd.fif')
+
+# morph
+fnames.add('morph', '{fwd_sub}/{subject}_{src_info}_to_{subject_to}-morph.h5')
+

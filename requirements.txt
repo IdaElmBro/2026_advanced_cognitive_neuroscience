@@ -8,3 +8,4 @@ ipympl
 h5io
 nibabel
 dipy
+nilearn
