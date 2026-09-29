@@ -17,7 +17,8 @@ The purpose of the notebooks in this repository is to provide you with some code
 
 *Coming soon to a GitHub repo near you:*
 
-* `MVPA.ipynb`: Illustrates how to prepare the data and perform multivariate pattern analysis (MVPA), including regressing out the effect of contrast. 
+* `MVPA.ipynb`: Illustrates how to prepare the data and perform multivariate pattern analysis (MVPA) both in sensor and source space.
+* `regress_out_effect_of_contrast_MVPA.ipynb`: Shows how to regress out the effect of constrast using linear regression and subsequently decode the perceptual awareness score.
 
 
 ## Scripts
