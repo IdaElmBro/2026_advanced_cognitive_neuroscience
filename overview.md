@@ -15,10 +15,13 @@ The purpose of the notebooks in this repository is to provide you with some code
 
 * `source_recon.ipynb`: Illustrates the steps involved in setting up the source space, computing the forward model and  the data for source reconstruction.
 
+* `MVPA.ipynb`: Illustrates how to prepare the data and perform multivariate pattern analysis (MVPA) both in sensor and source space.
+
+* `regress_out_effect_of_contrast_MVPA.ipynb`: Shows how to regress out the effect of stimulus constrast using linear regression and subsequently decode the perceptual awareness score.
+
 *Coming soon to a GitHub repo near you:*
 
-* `MVPA.ipynb`: Illustrates how to prepare the data and perform multivariate pattern analysis (MVPA) both in sensor and source space.
-* `regress_out_effect_of_contrast_MVPA.ipynb`: Shows how to regress out the effect of constrast using linear regression and subsequently decode the perceptual awareness score.
+* `beamforming.ipynb`: 
 
 
 ## Scripts
@@ -49,7 +52,7 @@ To guide you, here is a table showing which notebooks may contain relevant code 
 | `03_filter.py`  | `filter_ica_epochs.ipynb`                                                           | Adding bad channels to `info` and filtering.                                                                                     |
 | `04_ica.py`     | `filter_ica_epochs.ipynb`                                                           | ICA / artifact removal.                                                                                                          |
 | `05_epochs.py`  | `filter_ica_epochs.ipynb`, `photodiode.ipynb`, `add_epoch_metadata.ipynb` | Accounting for the delay between the trigger and stimulus onset, creating epochs, and adding behavioural metadata to the epochs. |
-| `06_stcs.py`  | `source_recon.ipynb` | Compute source time courses from epochs using a minimum-norm inverse solution, then morph them to fsaverage for group-level analysis.|
+| `06_stcs.py`  | `source_recon.ipynb` (and `beamforming.ipynb` if you want to use beamformer instead of minimum norm estimation) | Compute source time courses from epochs using a minimum-norm inverse solution, then morph them to fsaverage for group-level analysis.|
 ## Other files
 
 | File        | Notes                                                                                                                                                                                       |
