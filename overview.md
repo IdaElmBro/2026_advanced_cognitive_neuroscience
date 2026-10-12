@@ -1,3 +1,13 @@
+# Information for the report
+
+- Projector: ProPixx projector running at 60 Hz.
+- Subject demographics: Demographic information is available in the raw data under `raw.info["subject_info"]`. The relevant coding conventions are:
+  - Handedness: `1` = right-handed; `2` = left-handed.
+  - Sex: `1` = male; `2` = female.
+  - Subject 0188: Subtract 10 from the recorded birth year to obtain the correct year.
+
+
+
 # File overview
 
 > **Note:** Some files may not be uploaded until later!
@@ -33,13 +43,15 @@ The skeleton scripts in the `scripts_skeleton` folder are designed to guide you 
 * `04_ica.py`
 * `05_epochs.py`
 * `06_stcs.py`
-
-*Coming soon to a GitHub repo near you:*
 * `07_evoked.py`
 * `08_erf_stats.py`
 
 In addition to these, you may also want to develop scripts for your specific analyses. 
 The `07_evoked.py` and `08_erf_stats.py` scripts can serve as inspiration for how to prepare and analyse data first at the subject level, and then compute group-level statistics.
+
+
+## Master 
+I've also included a bash script which can be used to execute all the scripts you have developed! See `master.sh`
 
 ## Correspondence between analysis scripts and notebooks
 
