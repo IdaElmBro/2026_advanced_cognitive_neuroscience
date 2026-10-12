@@ -43,13 +43,15 @@ The skeleton scripts in the `scripts_skeleton` folder are designed to guide you 
 * `04_ica.py`
 * `05_epochs.py`
 * `06_stcs.py`
-
-*Coming soon to a GitHub repo near you:*
 * `07_evoked.py`
 * `08_erf_stats.py`
 
 In addition to these, you may also want to develop scripts for your specific analyses. 
 The `07_evoked.py` and `08_erf_stats.py` scripts can serve as inspiration for how to prepare and analyse data first at the subject level, and then compute group-level statistics.
+
+
+## Master 
+I've also included a bash script which can be used to execute all the scripts you have developed! See `master.sh`
 
 ## Correspondence between analysis scripts and notebooks
 
