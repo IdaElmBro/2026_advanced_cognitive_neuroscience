@@ -1,3 +1,13 @@
+# Information for the report
+
+- Projector: ProPixx projector running at 60 Hz.
+- Subject demographics: Demographic information is available in the raw data under `raw.info["subject_info"]`. The relevant coding conventions are:
+  - Handedness: `1` = right-handed; `2` = left-handed.
+  - Sex: `1` = male; `2` = female.
+  - Subject 0188: Subtract 10 from the recorded birth year to obtain the correct year.
+
+
+
 # File overview
 
 > **Note:** Some files may not be uploaded until later!
